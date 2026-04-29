@@ -3,6 +3,7 @@ import json
 import re
 import itertools
 from collections import defaultdict
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -15,8 +16,10 @@ from sklearn.metrics import cohen_kappa_score
 # KONFIGURASI FILE
 # =========================
 
-CLEAN_CSV = "Kelp4_dataset_2.csv"
-ANNOTATION_JSONL = "Kelp4_dataset_anotasi.jsonl"
+BASE_DIR = Path(__file__).parent
+
+CLEAN_CSV = BASE_DIR / "Kelp4_dataset_2.csv"
+ANNOTATION_JSONL = BASE_DIR / "Kelp4_dataset_anotasi.jsonl"
 
 LABELS = [
     "PRODUCT_POSITIVE", "PRODUCT_NEGATIVE", "PRODUCT_NEUTRAL",
